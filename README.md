@@ -7,14 +7,16 @@
 4. Co-located styles and tests with their components/functions for better organization
 
 ## App Structure
+```
 - App
     - Match
-        -Player
-- AppContext.js
+        - Player
 - api.js
-- utils.js
+- AppContext.js
 - constants.js
 - mocks.js
+- utils.js
+```
 
 ## How to run
 `yarn install` - install all dependecies
