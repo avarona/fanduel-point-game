@@ -1,0 +1,33 @@
+.playerContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.image {
+    width: 200px;
+    height: 200px;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.name, .score {
+    align-self: center;
+    font-size: 18px;
+}
+
+.disabled {
+    cursor: not-allowed;
+}
+
+.winnerSelected {
+    opacity: .2;
+}
+
+.winnerIcon {
+    opacity: 1;
+    width: 100px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}

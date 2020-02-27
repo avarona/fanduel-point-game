@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Container renders 1`] = `"<h1 class=\\"heading\\">Who has the greater FPPG</h1><main class=\\"appContainer\\"><div>Loading...</div></main>"`;
