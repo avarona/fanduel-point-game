@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Player Component with winnerId as \`1\` renders 1`] = `"<div class=\\"playerContainer disabled\\"><img class=\\"image winnerSelected\\" src=\\"slick pic\\" alt=\\"Kobe Bryant\\"><span class=\\"name\\">Kobe Bryant</span><span class=\\"score\\">15.00</span><img class=\\"winnerIcon\\" alt=\\"check mark\\" src=\\"https://cdn.pixabay.com/photo/2017/01/13/01/22/ok-1976099_960_720.png\\"></div>"`;
+exports[`Player Component with winnerId as \`1\` renders 1`] = `"<div class=\\"playerContainer disabled\\"><img class=\\"image winnerSelected\\" src=\\"slick pic\\" alt=\\"Kobe Bryant\\"><span class=\\"name\\">Kobe Bryant</span><span class=\\"score\\">15.00</span></div>"`;
 
 exports[`Player Component with winnerId as \`undefined\` renders 1`] = `"<div class=\\"playerContainer\\"><img class=\\"image\\" src=\\"slick pic\\" alt=\\"Kobe Bryant\\"><span class=\\"name\\">Kobe Bryant</span></div>"`;

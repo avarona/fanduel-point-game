@@ -7,8 +7,13 @@ const Match = ({ players }) => {
     const [player1, player2] = players;
     return (
         <AppContext.Consumer>
-            {({ winnerId, nextMatch, correctGuessCount, resetGame }) => (
+            {({ winnerId, nextMatch, totalGuessCount, correctGuessCount, resetGame }) => (
                 <div className={styles.matchContainer}>
+                    <div className={styles.guessCounter}>
+                        <span className={styles.guessTitle}>Win / Loss</span>
+                        <span>{correctGuessCount} / {totalGuessCount - correctGuessCount}</span>
+                    </div>
+
                     <div className={styles.players}>
                         <Player details={player1} />
                         <span className={styles.textBetween}>VS</span>

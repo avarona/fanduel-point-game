@@ -5,6 +5,12 @@ import styles from './styles.module.css';
 import { CHECK_ICON, X_ICON } from '../../constants';
 import { AppContext } from '../../AppContext';
 
+const WinOrFail = (winnerId, selectId) => (
+    winnerId === selectId
+    ? <img className={styles.winnerIcon} alt="check mark" src={CHECK_ICON} />
+    : <img className={styles.winnerIcon} alt="x mark" src={X_ICON} />
+)
+
 const Player = ({ details }) => {
     const fullName = concatFullName(details.first_name, details.last_name);
     const score = roundNumber(details.fppg);
@@ -13,7 +19,7 @@ const Player = ({ details }) => {
 
     return (
         <AppContext.Consumer>
-            {({ selectPlayer, winnerId }) => (
+            {({ selectPlayer, winnerId, selectId }) => (
                 <div className={classnames(styles.playerContainer, { [styles.disabled]: winnerId })} onClick={() => selectPlayer(id)}>
                     <img 
                         className={classnames(styles.image, { [styles.winnerSelected]: winnerId })}
@@ -26,13 +32,7 @@ const Player = ({ details }) => {
                     {winnerId && <span className={styles.score}>{score}</span>}
 
                     {/* render an icon for the winner/loser */}
-                    {/* Note: it's a short cicuit THEN (if true) a ternary. Won't render an icon if winnerId is false */}
-                    {winnerId && (
-                        winnerId === id 
-                            ? <img className={styles.winnerIcon} alt="check mark" src={CHECK_ICON} />
-                            : <img className={styles.winnerIcon} alt="x mark" src={X_ICON} />
-                        )
-                    }
+                    {selectId === id ? WinOrFail(winnerId, id) : null}
                 </div>
             )}
         </AppContext.Consumer>
