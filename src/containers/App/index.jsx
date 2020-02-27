@@ -19,11 +19,22 @@ class App extends React.Component {
     // fetch and store players to App's state
     fetchPlayers.then(({ data }) => {
       const { players } = data;
-      this.setState({ players }, () => {
+
+      this.setState({ players: this.cleanPlayerData(players) }, () => {
         this.createMatch(); // create the match once players are retrieved from backend
         this.setState({ loading: false }); // set loading state after the players are set to the app state
       });
     });
+  }
+
+  /**
+   * Ensure that the data from the api call is valid
+   * Note: best to do this on the back end and not have null values
+   * 
+   * @param players - array of players to remove bad data (ie null fppg)
+   */
+  cleanPlayerData = (players) => {
+    return players.filter(p => !!p.first_name && !!p.last_name && !!p.images.default.url && !!p.fppg);
   }
   
   /**

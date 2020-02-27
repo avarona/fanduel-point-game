@@ -18,6 +18,13 @@ describe('App Container', () => {
       wrapper.setState({ matchPlayers: [], winnerId: undefined, correctGuessCount: 0 });
     });
 
+    describe('cleanPlayerData(players)', () => {
+      it('returns a new players array without null values', () => {
+        instance.cleanPlayerData(Mocks.uncleanPlayers);
+        expect(instance.cleanPlayerData(Mocks.uncleanPlayers)).toEqual(Mocks.players);
+      });
+    });
+
     describe('createMatch()', () => {
       it('sets `matchPlayers` to an array of 2', () => {
         instance.createMatch();
